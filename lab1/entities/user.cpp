@@ -143,5 +143,7 @@ user::user(string username, string password, string authority, string name, stri
     this->bank_accounts_ID = bank_accounts_ID;
     this->credits_ID = credits_ID;
     this->deposits_ID = deposits_ID;
-    this->count = ID;
+    if(count < ID){
+        this->count = ID;
+    }
 }

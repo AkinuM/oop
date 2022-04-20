@@ -53,7 +53,9 @@ salary_project::salary_project(int company_bank_account_ID, int sum, int ID)
     this->company_bank_account_ID = company_bank_account_ID;
     this->sum = sum;
     this->ID = ID;
-    this->count = ID;
+    if(count < ID){
+        this->count = ID;
+    }
 }
 
 salary_project::salary_project(int company_bank_account_ID, int sum, vector<int> users_ID, int ID) {
@@ -61,5 +63,7 @@ salary_project::salary_project(int company_bank_account_ID, int sum, vector<int>
     this->sum = sum;
     this->users_ID = users_ID;
     this->ID = ID;
-    this->count = ID;
+    if(count < ID){
+        this->count = ID;
+    }
 }

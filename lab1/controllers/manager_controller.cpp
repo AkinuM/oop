@@ -6,7 +6,7 @@ void manager_controller::approve_sign_up(bank *bank, string passport)
     vector<sign_up_request> sign_up_requests = bank->getSign_up_requests();
     for(auto iter = sign_up_requests.begin(); iter != sign_up_requests.end(); iter++){
         if(iter->getPassport() == passport){
-            users.push_back(*(new user(iter->getUsername(), iter->getPassword(), "Operator", iter->getName(), passport, iter->getPhone(), iter->getEmail())));
+            users.push_back(*(new user(iter->getUsername(), iter->getPassword(), "Client", iter->getName(), passport, iter->getPhone(), iter->getEmail())));
             sign_up_requests.erase(iter);
             break;
         }

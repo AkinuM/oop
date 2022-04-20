@@ -22,5 +22,7 @@ deposit::deposit(int ID, int money, int percent) {
     this->money = money;
     this->percent = percent;
     this->ID = ID;
-    this->count1 = ID;
+    if(count1 < ID){
+        this->count1 = ID;
+    }
 }

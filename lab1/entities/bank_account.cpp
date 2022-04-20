@@ -56,7 +56,9 @@ bank_account::bank_account(){
 bank_account::bank_account(int money, int ID, int isFrozen, int isBlocked){
     this->money = money;
     this->ID = ID;
-    this->count = ID;
+    if(count < ID){
+        this->count = ID;
+    }
     this->isFrozen = isFrozen;
     this->isBlocked = isBlocked;
 }

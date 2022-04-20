@@ -34,5 +34,7 @@ credit::credit(int ID, int money, int percent, int period){
     this->percent = percent;
     this->period = period;
     this->ID = ID;
-    this->count1 = ID;
+    if(count1 < ID){
+        this->count1 = ID;
+    }
 }

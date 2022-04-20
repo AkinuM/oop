@@ -22,9 +22,9 @@ int main(int argc, char *argv[])
 //    user *us = new user("manager", "manager", "Manager");
 //    vector<user> users = {*us};
 //    bank3.setUsers(users);
-//    bank3.setCompanies(comp);
-//    db3->view_db("users");
-//    db2->view_db("users");
+  //  bank2.setCompanies(comp);
+    //db3->view_db("users");
+ //   db2->view_db("users");
 //    db1->view_db("users");
 //    db1->view_db("credits");
 //    db2->view_db("credits");
@@ -35,10 +35,10 @@ int main(int argc, char *argv[])
 //    db1->view_db("transfers");
 //    b2->view_db("transfers");
 //    db1->view_db("salary_projects");
-//    db2->view_db("salary_projects");
+    db2->view_db("salary_projects");
 //    db1->view_db("companies");
-//    db2->view_db("companies");
-//    db2->view_db("sign_up_requests");
+ //   db2->view_db("companies");
+   // db2->view_db("salary_project_requests");
     MainWindow w(&bank1, &bank2, &bank3);
     w.show();
     a.exec();

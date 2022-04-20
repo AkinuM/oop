@@ -9,7 +9,7 @@ std::vector<dot> paint::dots;
 std::vector<dot> paint::tempDots;
 RGB paint::lineColor = *new RGB(0, 0, 0);
 RGB paint::fillColor = *new RGB(1, 1, 1);
-int paint::width = 5;
+int paint::width = 3;
 int paint::figureType = 1;
 bool paint::isSecond;
 int paint::firstx;
@@ -148,11 +148,6 @@ void paint::processColorMenu(int value) {
     isSecond = false;
 
     switch (value) {
-        case 0:
-            lineColor.setR(1);
-            lineColor.setG(1);
-            lineColor.setB(1);
-            break;
         case 1:
             lineColor.setR(1);
             lineColor.setG(0);
@@ -175,6 +170,11 @@ void paint::processFillColorMenu(int value) {
     isSecond = false;
 
     switch (value) {
+        case 0:
+            fillColor.setR(1);
+            fillColor.setG(1);
+            fillColor.setB(1);
+            break;
         case 1:
             fillColor.setR(1);
             fillColor.setG(0);

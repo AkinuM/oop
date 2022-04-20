@@ -111,5 +111,7 @@ company::company(string type, string legal_name, int PRN, long BIC, string legal
     this->specialists_ID = specialists_ID;
     this->bank_accounts_ID = bank_accounts_ID;
     this->salary_projects_ID = salary_projects_ID;
-    this->count = ID;
+    if(count < ID){
+        this->count = ID;
+    }
 }
