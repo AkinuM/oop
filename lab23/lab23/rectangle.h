@@ -1,15 +1,15 @@
-#ifndef LINE_H
-#define LINE_H
+#ifndef RECTANGLE_H
+#define RECTANGLE_H
 
 #pragma once
 #include "ifigure.h"
 #include <vector>
 #include <QPen>
 
-class Line : public IFigure
+class Rectangle : public IFigure
 {
 public:
-    Line(QPointF point1, QPointF point2, QColor lineColor, QColor fillColor, int width, int figureType);
+    Rectangle(QPointF point1, QPointF point2, QColor lineColor, QColor fillColor, int width, int figureType);
     QGraphicsItem* draw() override;
     int getWidth() const override;
     void setWidth(int value) override;
@@ -25,4 +25,4 @@ public:
     QColor getFillColor() const override;
 };
 
-#endif // LINE_H
+#endif // RECTANGLE_H

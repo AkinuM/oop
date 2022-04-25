@@ -16,18 +16,24 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    ellipse.cpp \
     factory.cpp \
     line.cpp \
     main.cpp \
     mainwindow.cpp \
-    paintscene.cpp
+    paintscene.cpp \
+    polygon.cpp \
+    rectangle.cpp
 
 HEADERS += \
+    ellipse.h \
     factory.h \
     ifigure.h \
     line.h \
     mainwindow.h \
-    paintscene.h
+    paintscene.h \
+    polygon.h \
+    rectangle.h
 
 FORMS += \
     mainwindow.ui

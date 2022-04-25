@@ -1,15 +1,16 @@
-#ifndef LINE_H
-#define LINE_H
+#ifndef ELLIPSE_H
+#define ELLIPSE_H
+
 
 #pragma once
 #include "ifigure.h"
 #include <vector>
 #include <QPen>
 
-class Line : public IFigure
+class Ellipse : public IFigure
 {
 public:
-    Line(QPointF point1, QPointF point2, QColor lineColor, QColor fillColor, int width, int figureType);
+    Ellipse(QPointF point1, QPointF point2, QColor lineColor, QColor fillColor, int width, int figureType);
     QGraphicsItem* draw() override;
     int getWidth() const override;
     void setWidth(int value) override;
@@ -25,4 +26,4 @@ public:
     QColor getFillColor() const override;
 };
 
-#endif // LINE_H
+#endif // ELLIPSE_H

@@ -1,15 +1,15 @@
-#ifndef LINE_H
-#define LINE_H
+#ifndef POLYGON_H
+#define POLYGON_H
 
 #pragma once
 #include "ifigure.h"
 #include <vector>
 #include <QPen>
 
-class Line : public IFigure
+class Polygon : public IFigure
 {
 public:
-    Line(QPointF point1, QPointF point2, QColor lineColor, QColor fillColor, int width, int figureType);
+    Polygon(QPointF point1, QPointF point2, QColor lineColor, QColor fillColor, int width, int figureType);
     QGraphicsItem* draw() override;
     int getWidth() const override;
     void setWidth(int value) override;
@@ -25,4 +25,4 @@ public:
     QColor getFillColor() const override;
 };
 
-#endif // LINE_H
+#endif // POLYGON_H
