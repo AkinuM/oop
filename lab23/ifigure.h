@@ -31,4 +31,3 @@ public:
 };
 
 #endif // IFIGURE_H
-
