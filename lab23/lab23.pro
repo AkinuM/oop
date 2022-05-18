@@ -19,6 +19,7 @@ SOURCES += \
     ellipse.cpp \
     factory.cpp \
     line.cpp \
+    linecreator.cpp \
     main.cpp \
     mainwindow.cpp \
     paintscene.cpp \
@@ -28,8 +29,10 @@ SOURCES += \
 HEADERS += \
     ellipse.h \
     factory.h \
+    icreator.h \
     ifigure.h \
     line.h \
+    linecreator.h \
     mainwindow.h \
     paintscene.h \
     polygon.h \
