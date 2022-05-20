@@ -14,13 +14,16 @@ class paintScene : public QGraphicsScene
     Q_OBJECT
 
 public:
-    explicit paintScene(int *figureType, QComboBox *box, QObject *parent = 0);
+    explicit paintScene(std::string *figureType, QComboBox *box, QObject *parent = 0);
     ~paintScene();
     void undo();
     void redo();
     void deleteFigure(QString figureName, QString* prevFigure);
 
     std::vector<IFigure*>* getFigures();
+    std::vector<ICreator*>* getFigureCreators();
+
+    QComboBox* getComboBox();
 
     int getWidth() const;
     void setWidth(int value);
@@ -47,10 +50,11 @@ private:
     std::vector<IFigure*> figures;
     std::vector<IFigure*> tempFigures;
     std::vector<IFigure*> redoFigures;
+    std::vector<ICreator*> figureCreators;
     QColor lineColor;
     QColor fillColor;
     int width;
-    int *figureType;
+    std::string *figureType;
     QComboBox *box;
     bool copy;
     bool isSelected;

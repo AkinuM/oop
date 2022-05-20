@@ -12,7 +12,7 @@ protected:
     QColor tempLineColor;
     QColor fillColor;
     int width;
-    int figureType;
+    std::string figureType;
 public:
     virtual QGraphicsItem* draw() = 0;
     virtual ~IFigure() = default;
@@ -26,7 +26,7 @@ public:
     virtual QPointF getPoint2() const = 0;
     virtual void setPoint1(const QPointF &value) = 0;
     virtual void setPoint2(const QPointF &value) = 0;
-    virtual int getFigureType() const = 0;
+    virtual std::string getFigureType() const = 0;
     virtual QColor getFillColor() const = 0;
 };
 

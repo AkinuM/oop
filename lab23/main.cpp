@@ -1,5 +1,5 @@
 #include "mainwindow.h"
-#include "ifigure.h"
+#include "figures/ifigure.h"
 #include "vector"
 #include <QApplication>
 #include <memory>

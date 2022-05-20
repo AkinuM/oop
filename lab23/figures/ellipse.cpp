@@ -1,6 +1,6 @@
 #include "ellipse.h"
 
-Ellipse::Ellipse(QPointF point1, QPointF point2, QColor lineColor, QColor fillColor, int width, int figureType)
+Ellipse::Ellipse(QPointF point1, QPointF point2, QColor lineColor, QColor fillColor, int width, std::string figureType)
 {
     this->point1 = point1;
     this->point2 = point2;
@@ -79,7 +79,7 @@ QColor Ellipse::getFillColor() const
     return fillColor;
 }
 
-int Ellipse::getFigureType() const
+std::string Ellipse::getFigureType() const
 {
     return figureType;
 }

@@ -1,6 +1,6 @@
 #include "rectangle.h"
 
-Rectangle::Rectangle(QPointF point1, QPointF point2, QColor lineColor, QColor fillColor, int width, int figureType)
+Rectangle::Rectangle(QPointF point1, QPointF point2, QColor lineColor, QColor fillColor, int width, std::string figureType)
 {
     this->point1 = point1;
     this->point2 = point2;
@@ -79,7 +79,7 @@ QColor Rectangle::getFillColor() const
     return fillColor;
 }
 
-int Rectangle::getFigureType() const
+std::string Rectangle::getFigureType() const
 {
     return figureType;
 }

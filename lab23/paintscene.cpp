@@ -1,6 +1,6 @@
 #include "paintscene.h"
 
-paintScene::paintScene(int *figureType, QComboBox *box, QObject *parent) : QGraphicsScene(parent)
+paintScene::paintScene(std::string *figureType, QComboBox *box, QObject *parent) : QGraphicsScene(parent)
 {
     lineColor.setRgb(0, 0, 0);
     fillColor.setRgb(1, 1, 1);
@@ -11,6 +11,10 @@ paintScene::paintScene(int *figureType, QComboBox *box, QObject *parent) : QGrap
     copy = false;
     isSelected = false;
     isPolyline = false;
+    figureCreators.push_back(new lineCreator());
+    figureCreators.push_back(new rectangleCreator());
+    figureCreators.push_back(new ellipseCreator());
+    figureCreators.push_back(new polygonCreator());
 }
 
 paintScene::~paintScene()
@@ -120,6 +124,16 @@ std::vector<IFigure*>* paintScene::getFigures()
     return &figures;
 }
 
+std::vector<ICreator *> *paintScene::getFigureCreators()
+{
+    return &figureCreators;
+}
+
+QComboBox *paintScene::getComboBox()
+{
+    return box;
+}
+
 
 int paintScene::getWidth() const
 {
@@ -185,7 +199,7 @@ void paintScene::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
     tempFigures.clear();
     if(isSecond){
-        tempFigures.push_back(factory::createFigure(previousPoint, event->scenePos(), lineColor, fillColor, width, *figureType));
+        tempFigures.push_back(factory::createFigure(figureCreators, previousPoint, event->scenePos(), lineColor, fillColor, width, *figureType));
         updateScene();
     }
     if(copy){
@@ -193,7 +207,7 @@ void paintScene::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
         auto tempX = figures.at(figureNumber)->getPoint2().x() - figures.at(figureNumber)->getPoint1().x();
         auto tempY = figures.at(figureNumber)->getPoint2().y() - figures.at(figureNumber)->getPoint1().y();
         QPointF point(event->scenePos().x() + tempX, event->scenePos().y() + tempY);
-        tempFigures.push_back(factory::createFigure(event->scenePos(), point, figures.at(figureNumber)->getTempLineColor(), figures.at(figureNumber)->getFillColor(), figures.at(figureNumber)->getWidth(), figures.at(figureNumber)->getFigureType()));
+        tempFigures.push_back(factory::createFigure(figureCreators, event->scenePos(), point, figures.at(figureNumber)->getTempLineColor(), figures.at(figureNumber)->getFillColor(), figures.at(figureNumber)->getWidth(), figures.at(figureNumber)->getFigureType()));
         updateScene();
     }
 }

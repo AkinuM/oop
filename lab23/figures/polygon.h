@@ -1,16 +1,15 @@
-#ifndef ELLIPSE_H
-#define ELLIPSE_H
-
+#ifndef POLYGON_H
+#define POLYGON_H
 
 #pragma once
-#include "ifigure.h"
+#include "figures/ifigure.h"
 #include <vector>
 #include <QPen>
 
-class Ellipse : public IFigure
+class Polygon : public IFigure
 {
 public:
-    Ellipse(QPointF point1, QPointF point2, QColor lineColor, QColor fillColor, int width, int figureType);
+    Polygon(QPointF point1, QPointF point2, QColor lineColor, QColor fillColor, int width, std::string figureType);
     QGraphicsItem* draw() override;
     int getWidth() const override;
     void setWidth(int value) override;
@@ -22,8 +21,8 @@ public:
     QPointF getPoint2() const override;
     void setPoint1(const QPointF &value) override;
     void setPoint2(const QPointF &value) override;
-    int getFigureType() const override;
+    std::string getFigureType() const override;
     QColor getFillColor() const override;
 };
 
-#endif // ELLIPSE_H
+#endif // POLYGON_H

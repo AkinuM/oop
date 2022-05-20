@@ -1,6 +1,6 @@
 #include "polygon.h"
 
-Polygon::Polygon(QPointF point1, QPointF point2, QColor lineColor, QColor fillColor, int width, int figureType)
+Polygon::Polygon(QPointF point1, QPointF point2, QColor lineColor, QColor fillColor, int width, std::string figureType)
 {
     this->point1 = point1;
     this->point2 = point2;
@@ -79,7 +79,7 @@ QColor Polygon::getFillColor() const
     return fillColor;
 }
 
-int Polygon::getFigureType() const
+std::string Polygon::getFigureType() const
 {
     return figureType;
 }

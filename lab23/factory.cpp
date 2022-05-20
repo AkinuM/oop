@@ -1,19 +1,10 @@
 #include "factory.h"
 
-IFigure* factory::createFigure(QPointF point1, QPointF point2, QColor lineColor, QColor fillColor, int width, int figureType)
+IFigure* factory::createFigure(std::vector<ICreator*> figureCreators, QPointF point1, QPointF point2, QColor lineColor, QColor fillColor, int width, std::string figureType)
 {
-    switch(figureType){
-    case 1:
-        return new Line(point1, point2, lineColor, fillColor, width, figureType);
-        break;
-    case 2:
-        return new Rectangle(point1, point2, lineColor, fillColor, width, figureType);
-        break;
-    case 3:
-        return new Ellipse(point1, point2, lineColor, fillColor, width, figureType);
-        break;
-    case 4:
-        return new Polygon(point1, point2, lineColor, fillColor, width, figureType);
-        break;
+    for (auto creator : figureCreators){
+        if (creator->getFigureType() == figureType){
+            return creator->create(point1, point2, lineColor, fillColor, width, figureType);
+        }
     }
 }

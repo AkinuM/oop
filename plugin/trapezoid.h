@@ -1,15 +1,14 @@
-#ifndef LINE_H
-#define LINE_H
+#ifndef TRAPEZOID_H
+#define TRAPEZOID_H
 
-#pragma once
-#include "ifigure.h"
+#include "../lab23/figures/ifigure.h"
 #include <vector>
 #include <QPen>
 
-class Line : public IFigure
+class Trapezoid : public IFigure
 {
 public:
-    Line(QPointF point1, QPointF point2, QColor lineColor, QColor fillColor, int width, int figureType);
+    Trapezoid(QPointF point1, QPointF point2, QColor lineColor, QColor fillColor, int width, std::string figureType);
     QGraphicsItem* draw() override;
     int getWidth() const override;
     void setWidth(int value) override;
@@ -21,8 +20,8 @@ public:
     QPointF getPoint2() const override;
     void setPoint1(const QPointF &value) override;
     void setPoint2(const QPointF &value) override;
-    int getFigureType() const override;
+    std::string getFigureType() const override;
     QColor getFillColor() const override;
 };
 
-#endif // LINE_H
+#endif // TRAPEZOID_H

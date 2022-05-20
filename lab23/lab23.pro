@@ -16,27 +16,33 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    ellipse.cpp \
+    creators/ellipsecreator.cpp \
+    creators/linecreator.cpp \
+    creators/polygoncreator.cpp \
+    creators/rectanglecreator.cpp \
     factory.cpp \
-    line.cpp \
-    linecreator.cpp \
+    figures/ellipse.cpp \
+    figures/line.cpp \
+    figures/polygon.cpp \
+    figures/rectangle.cpp \
     main.cpp \
     mainwindow.cpp \
-    paintscene.cpp \
-    polygon.cpp \
-    rectangle.cpp
+    paintscene.cpp
 
 HEADERS += \
-    ellipse.h \
+    creators/ellipsecreator.h \
+    creators/icreator.h \
+    creators/linecreator.h \
+    creators/polygoncreator.h \
+    creators/rectanglecreator.h \
     factory.h \
-    icreator.h \
-    ifigure.h \
-    line.h \
-    linecreator.h \
+    figures/ellipse.h \
+    figures/ifigure.h \
+    figures/line.h \
+    figures/polygon.h \
+    figures/rectangle.h \
     mainwindow.h \
-    paintscene.h \
-    polygon.h \
-    rectangle.h
+    paintscene.h
 
 FORMS += \
     mainwindow.ui

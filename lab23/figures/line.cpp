@@ -1,6 +1,6 @@
 #include "line.h"
 
-Line::Line(QPointF point1, QPointF point2, QColor lineColor, QColor fillColor, int width, int figureType)
+Line::Line(QPointF point1, QPointF point2, QColor lineColor, QColor fillColor, int width, std::string figureType)
 {
     this->point1 = point1;
     this->point2 = point2;
@@ -76,7 +76,7 @@ QColor Line::getFillColor() const
     return fillColor;
 }
 
-int Line::getFigureType() const
+std::string Line::getFigureType() const
 {
     return figureType;
 }

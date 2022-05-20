@@ -3,15 +3,15 @@
 
 #pragma once
 #include <memory>
-#include <line.h>
-#include <rectangle.h>
-#include <ellipse.h>
-#include <polygon.h>
+#include <creators/linecreator.h>
+#include <creators/rectanglecreator.h>
+#include <creators/ellipsecreator.h>
+#include <creators/polygoncreator.h>
 
 class factory
 {
 public:
-    static IFigure* createFigure(QPointF point1, QPointF point2, QColor lineColor, QColor fillColor, int width, int figureType);
+    static IFigure* createFigure(std::vector<ICreator*> figureCreators, QPointF point1, QPointF point2, QColor lineColor, QColor fillColor, int width, std::string figureType);
 };
 
 #endif // FACTORY_H

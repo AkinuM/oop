@@ -2,9 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "ifigure.h"
+#include "figures/ifigure.h"
 #include <QGraphicsView>
 #include <paintscene.h>
+#include <QPluginLoader>
+#include <QDir>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -62,10 +64,22 @@ private slots:
 
     void on_actionPolyline_triggered();
 
+    void slotSetFigureType();
+
+    void on_pushButton_3_clicked();
+
+    void save();
+
+    void load();
+
+    void on_pushButton_4_clicked();
+
+    void on_pushButton_5_clicked();
+
 private:
     Ui::MainWindow *ui;
     paintScene *scene;
-    int figureType;
+    std::string figureType;
     QString selectedFigure;
     QString prevFigure;
 };
