@@ -152,11 +152,12 @@ void paintScene::mousePressEvent(QGraphicsSceneMouseEvent *event)
         if (event->button() == Qt::LeftButton && !isSecond){
             previousPoint = event->scenePos();
             isSecond = true;
+            tempFigures.push_back(factory::createFigure(figureCreators, previousPoint, event->scenePos(), lineColor, fillColor, width, *figureType));
+            updateScene();
         }
         else if (event->button() == Qt::LeftButton && isSecond){
             previousPoint = event->scenePos();
             figures.push_back(std::move(tempFigures.back()));
-            tempFigures.clear();
             box->addItem(QString("figure" + QString::number(figures.size())));
             updateScene();
             copy = false;
@@ -191,8 +192,9 @@ void paintScene::mousePressEvent(QGraphicsSceneMouseEvent *event)
     else if (event->button() == Qt::LeftButton && !isSecond){
         previousPoint = event->scenePos();
         isSecond = true;
+        tempFigures.push_back(factory::createFigure(figureCreators, previousPoint, event->scenePos(), lineColor, fillColor, width, *figureType));
+        updateScene();
     }
-
 }
 
 void paintScene::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
